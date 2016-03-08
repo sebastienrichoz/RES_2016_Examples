@@ -40,6 +40,9 @@ public class BufferedIOBenchmark {
 	final static String FILENAME_PREFIX = "test-data"; // we will write and read test files at this location
 	final static long NUMBER_OF_BYTES_TO_WRITE = 1024 * 1024 * 10; // we will write and read 10 MB files
 
+	/**
+	 * Ajout d'un serializer et d'un recorder accessible dans le main
+	 */
     private ISerializer serializer = new CsvSerializer();
     private IRecorder recorder = new FileRecorder("./out/results.csv", serializer);
 	

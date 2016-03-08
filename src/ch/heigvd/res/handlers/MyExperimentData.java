@@ -1,22 +1,31 @@
 package ch.heigvd.res.handlers;
 
-import ch.heigvd.res.io.BufferedIOBenchmark;
-
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by sebri on 07.03.2016.
+ * This class gives the user the ability to store some data
+ *
+ * @author Sébastien Richoz
  */
-
 public class MyExperimentData implements IData {
     private Map<Integer, String> values = new HashMap<>();
 
+    /**
+     * Store data by passing it directly to the constructor.
+     *
+     * @param parameters are the data to store. The order counts.
+     */
     public MyExperimentData(String ... parameters) {
         for(int i = 0 ; i < parameters.length ; ++i)
             values.put(i, parameters[i]);
     }
 
+    /**
+     * Get the data stored.
+     *
+     * @return a table of objects. The objects are the data.
+     */
     public Object[] getData() {
         return values.values().toArray();
     }

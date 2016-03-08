@@ -3,9 +3,11 @@ package ch.heigvd.res.handlers;
 import java.io.PrintStream;
 
 /**
- * Created by sebri on 07.03.2016.
+ * This is a CSV serializer class which offers the user
+ * to serialize an IData object into a PrintStream stream.
+ *
+ * @author Sébastien Richoz
  */
-
 public class CsvSerializer implements ISerializer {
 
     @Override

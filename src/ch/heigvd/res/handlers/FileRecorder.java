@@ -5,7 +5,9 @@ import java.io.FileNotFoundException;
 import java.io.PrintStream;
 
 /**
- * Created by sebri on 07.03.2016.
+ * This class gives a file to record some IData into it after having it serialized.
+ *
+ * @author Sébastien Richoz
  */
 public class FileRecorder implements IRecorder {
 
@@ -19,6 +21,9 @@ public class FileRecorder implements IRecorder {
         this.serializer = serializer;
     }
 
+    /**
+     * Create the file and open the stream to write in it.
+     */
     @Override
     public void init() {
         this.outputFile = new File(this.filename);
@@ -29,11 +34,21 @@ public class FileRecorder implements IRecorder {
         }
     }
 
+    /**
+     * Close the printstream to close connection with the file.
+     */
     @Override
     public void close() {
         this.printStream.close();
     }
 
+    /**
+     * Record some IData into a file after having serialized it.
+     *
+     * @param data is the data to record in the FileRecorder.
+     *             It will be serialized with the appropriate
+     *             serializer passed in the FileRecorder constructor.
+     */
     @Override
     public void record(IData data) {
         serializer.serialize(data, printStream);
